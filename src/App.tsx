@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <h1>Hello Carros Top</h1>
+    <h1 className="bg-primary text-success">Hello Carros Top</h1>
   );
 }
 
