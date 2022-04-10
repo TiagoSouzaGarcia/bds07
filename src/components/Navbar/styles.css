@@ -1,6 +1,6 @@
 .main-nav {
     min-height: 70px;
-    padding-left: 40px;
+    padding-left: 10px;
 }
 
 .nav-logo-text, .nav-logo-text:hover {
@@ -14,7 +14,7 @@
     justify-content: space-between;
 }
 
-.main-menu a, a:hover {
+.main-menu a, .main-menu a:hover {
     color: #00285F;
 }
 
