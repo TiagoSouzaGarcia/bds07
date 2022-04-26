@@ -1,0 +1,15 @@
+.btn-buy-catalog {
+    background-color:  #00285F;
+    max-width: 270px;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.btn-icon h6 {
+    padding: 2px 0 0 0;
+    color: white;
+    align-items: center;
+}
+
+

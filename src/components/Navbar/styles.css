@@ -11,8 +11,11 @@
 .main-menu {
     display: flex;
     font-size: 18px;
-    width: 170px;
-    justify-content: space-between;
+    justify-content: flex-end;
+}
+
+.main-menu ul li {
+    padding-left: 70px;
 }
 
 .main-menu a, .main-menu a:hover {
@@ -29,11 +32,11 @@
     }
 
     .main-menu {
-        display: flex;
-        font-size: 18px;
-        padding-right: 100px;
-        width: 920px;
-        justify-content: flex-end;
+        margin-right: 120px;
+    }
+    
+    .main-menu ul li {
+        padding-left: 100px;
     }
 }
 

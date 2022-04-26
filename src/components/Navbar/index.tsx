@@ -21,8 +21,8 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="carrostop-navbar">
-          <ul className="navbar-nav offset-md-2 main-menu">
+        <div className="collapse navbar-collapse main-menu" id="carrostop-navbar">
+          <ul className="navbar-nav">
             <li>
               <a href="link" className="active">
                 HOME
