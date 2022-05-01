@@ -1,0 +1,74 @@
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #EDEDED;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.btn-icon-search {
+    width: 77px;
+    height: 40px;
+    background-color: #00285F;
+    border-radius: 0px 5px 5px 0px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.btn-icon-search h6 {
+    font-size: 14px;
+}
+
+.btn-text-field {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 40px;
+    color: #A7A7A7;
+    font-size: 14px;
+    text-align: left;
+    background-color: #FFFFFF;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.btn-text-field p {
+    margin: 0px;
+}
+
+@media (min-width: 576px) {
+    .btn-text-field {
+        width: 320px;
+    }
+
+    .btn-icon-search {
+        width: 174px;
+    }
+}
+
+@media (min-width: 768px) {
+    .btn-text-field {
+        width: 516px;
+    }
+}
+
+@media (min-width: 992px) {
+    .btn-text-field {
+        width: 584px;
+    }
+
+    .btn-container {
+        padding-left: 80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn-text-field {
+        width: 90%;
+    }
+
+    .btn-container {
+        padding: 18px 40px 20px 40px;
+    }
+}

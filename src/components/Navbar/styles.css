@@ -1,42 +1,46 @@
 .main-nav {
-    display: flex;
-    min-height: 70px;
-    padding-left: 10px;
+  display: flex;
+  min-height: 70px;
+  padding-left: 10px;
 }
 
-.nav-logo-text, .nav-logo-text:hover {
-    color: #00285F;
+.nav-logo-text,
+.nav-logo-text:hover {
+  color: #00285f;
 }
 
 .main-menu {
-    display: flex;
-    font-size: 18px;
-    justify-content: flex-end;
+  display: flex;
+  font-size: 18px;
+  justify-content: flex-start;
 }
 
-.main-menu ul li {
-    padding-left: 70px;
-}
-
-.main-menu a, .main-menu a:hover {
-    color: #00285F;
+.main-menu a,
+.main-menu a:hover {
+  color: #00285f;
 }
 
 .main-menu a.active {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .main-menu ul li {
+    padding-left: 20px;
+  }
+
+  .main-menu {
+    justify-content: flex-end;
+    padding-right: 40px;
+  }
 }
 
 @media (min-width: 1200px) {
-    .nav-logo-text, .nav-logo-text:hover {
-        padding-left: 100px;
-    }
-
-    .main-menu {
-        margin-right: 120px;
-    }
-    
-    .main-menu ul li {
-        padding-left: 100px;
-    }
+  .nav-logo-text,
+  .nav-logo-text:hover {
+    padding-left: 20px;
+  }
+  .main-menu ul li {
+    padding-left: 100px;
+  }
 }
-

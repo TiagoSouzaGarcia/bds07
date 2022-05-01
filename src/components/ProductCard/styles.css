@@ -1,50 +1,61 @@
 .product-card {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    color: black;
-    text-align: center;
-    padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  color: black;
+  text-align: center;
+  padding-bottom: 15px;
 }
 
 .product-card h3 {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .product-card h6 {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .product-card p {
-    font-size: 14px;
-    font-style: italic;
-    color: #585858;
+  font-size: 14px;
+  font-style: italic;
+  color: #585858;
 }
 
 .card-top-container {
-    padding-top: 16px 0;
+  padding-top: 16px 0;
 }
 
 .card-top-container img {
-    width: 220.72px;
-    height: 165px;
+  width: 220.72px;
+  height: 165px;
 }
 
-
 .card-bottom-container {
-    padding: 15px 20px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 15px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-description-container {
-    padding: 10px 0 0 0;
-    text-align: left;
-    max-width: 270px;
+  padding: 10px 0 0 0;
+  text-align: left;
+  max-width: 270px;
 }
 
-.card-button-container {
+@media (min-width: 576px) {
+  .card-bottom-container {
+    padding: 15px 20px 20px 10px;
+  }
 
+  .card-description-container p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-description-container p {
+    font-size: 14px;
+  }
 }
