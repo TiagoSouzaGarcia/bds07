@@ -3,22 +3,26 @@ import './styles.css';
 import ResultCard from 'components/ResultCard';
 import React, { useState } from 'react';
 import axios from 'axios';
+import CardLoader from './CardLoader';
 
 type FormData = {
-  cep: string;
+  username: string;
 };
 
-type Address = {
-  logradouro: string;
-  localidade: string;
+type Profile = {
+  html_url: string;
+  followers: string;
+  name: string;
+  location: string;
+  avatar_url: string;
 };
 
 const GitHubApiSearch = () => {
-
-  const [address, setAddress] = useState<Address>();
+  const [profile, setProfile] = useState<Profile>();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState<FormData>({
-    cep: ''
+    username: '',
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,28 +34,33 @@ const GitHubApiSearch = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
-    axios.get(`https://viacep.com.br/ws/${formData.cep}/json`)
-    .then((response)=> {
-        setAddress(response.data);
+
+    setIsLoading(true);
+    axios
+      .get(`https://api.github.com/users/${formData.username}`)
+      .then((response) => {
+        setProfile(response.data);
         console.log(response.data);
-    }) 
-    .catch((error) => {
-      setAddress(undefined);
-      console.log(error);
-    });
+      })
+      .catch((error) => {
+        setProfile(undefined);
+        console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
-    <div className="cep-search-container">
+    <div className="api-search-container">
       <div className="container search-container">
-      <h1>Encontre um perfil no Github</h1>
+        <h1>Encontre um perfil no Github</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-container">
             <input
               type="text"
-              name="cep"
-              value={formData.cep}
+              name="username"
+              value={formData.username}
               className="search-input"
               placeholder="Usuário Github"
               onChange={handleChange}
@@ -61,14 +70,37 @@ const GitHubApiSearch = () => {
             </button>
           </div>
         </form>
-        {address && (
-          <>
-          <p>Informações</p>
-            <ResultCard title="Perfil" description={address.logradouro} />
-            <ResultCard title="Seguidores" description={address.localidade} />
-            <ResultCard title="Localidade" description={address.localidade} />
-            <ResultCard title="Nome" description={address.localidade} />
-          </>
+      </div>
+      <div className="container profile-container">
+        {isLoading ? (
+          <CardLoader />
+        ) : (
+          <form className="container profile-container">
+            {profile && (
+              <>
+                <div>
+                  <img
+                    className="img-container"
+                    src={profile.avatar_url}
+                    alt={profile.name}
+                  />
+                </div>
+                <div className="info-container">
+                  <h4>Informações</h4>
+                  <ResultCard title="Perfil:" description={profile.html_url} />
+                  <ResultCard
+                    title="Seguidores:"
+                    description={profile.followers}
+                  />
+                  <ResultCard
+                    title="Localidade:"
+                    description={profile.location}
+                  />
+                  <ResultCard title="Nome:" description={profile.name} />
+                </div>
+              </>
+            )}
+          </form>
         )}
       </div>
     </div>
